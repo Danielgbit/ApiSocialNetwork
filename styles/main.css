@@ -21,7 +21,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 30px;
-  margin: 10% 0;
+  margin: 5% 0;
   height: 100%;
 }
 #container h1 {
@@ -58,10 +58,88 @@ body {
   color: #fff9ec;
   box-shadow: 0 1px 5px 0 #fff9ec;
 }
-#container .add-post-container {
-  background-color: #fff9ec;
-  color: #3B3030;
+
+.add-post-container {
+  background-color: rgba(183, 181, 181, 0.32);
+  color: white;
   border-radius: 10px;
   display: grid;
   place-items: center;
+  width: 30%;
+  height: 450px;
+  box-shadow: 0 0.5px 5px 0 white;
+}
+.add-post-container h3 {
+  font-family: Raleway, sans-serif, Roboto;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgb(59, 48, 48) 15%, rgb(121, 87, 87) 100%);
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.add-post-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30%;
+  width: 100%;
+  height: 100%;
+}
+.add-post-container form input, .add-post-container form textarea {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  padding: 5px 5px;
+  width: 80%;
+}
+.add-post-container form input::-moz-placeholder, .add-post-container form textarea::-moz-placeholder {
+  color: white;
+  font-family: Raleway, sans-serif, Roboto;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 12px;
+}
+.add-post-container form input::placeholder, .add-post-container form textarea::placeholder {
+  color: white;
+  font-family: Raleway, sans-serif, Roboto;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 12px;
+}
+.add-post-container form input:focus, .add-post-container form textarea:focus {
+  color: white;
+  font-family: Raleway, sans-serif, Roboto;
+}
+.add-post-container form textarea {
+  padding: 0;
+  font-size: 1rem;
+  max-width: 80%;
+  max-height: 200px;
+  height: 100%;
+  width: 100%;
+}
+.add-post-container form textarea:focus {
+  font-family: Poppins, sans-serif, Roboto;
+}
+.add-post-container form button {
+  border-radius: 25px;
+  height: 50px;
+  width: 50%;
+  border: none;
+  cursor: pointer;
+  font-family: Raleway, sans-serif, Roboto;
+  font-weight: 600;
+  background-color: #fff9ec;
+  color: #3B3030;
+  text-transform: uppercase;
+  transition: all 400ms ease;
+  margin-bottom: 30px;
+}
+.add-post-container form button:hover {
+  background-color: #3B3030;
+  color: #fff9ec;
+  box-shadow: 0 1px 5px 0 #fff9ec;
 }/*# sourceMappingURL=main.css.map */
