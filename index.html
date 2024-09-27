@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Network</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+    <div id="container">
+        <h1>Social Network</h1>
+        <h2>See posts</h2>
+        <button class="button-get-data" onclick="getData()">See posts</button>
+        <ul></ul>
+        
+        <section class="add-post-container">
+            <h3>Add post</h3>
+            <form>
+                <label for="title" >Title</label>
+                <input type="text" id="title">
+                <label for="description">Description</label>
+                <textarea type="text" id="description" maxlength="200" minlength="20"></textarea>
+                <button type="submit" onclick="postData()">Send post</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

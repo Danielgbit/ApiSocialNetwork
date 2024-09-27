@@ -1,0 +1,76 @@
+@import './variables.scss';
+
+
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   text-decoration: none; 
+}
+
+body {
+    background: $background-color;
+    height: 100%;
+    color: $text-color;
+    font-family: $font-primary;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin: 10% 0;
+    height: 100%;
+
+    h1 {
+        font-weight: 400;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        box-shadow: 0 0.3px 2px 0 white;
+        border-radius: 25px;
+        padding: 0 20px;
+    }
+
+    h2 {
+        font-family: $font-secondary;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 40px;
+        margin-top: 50px;
+    }
+
+    .button-get-data {
+        border-radius: 25px;
+        height: 50px;
+        width: 20%;
+        border: none;
+        cursor: pointer;
+        font-family: $font-secondary;
+        font-weight: 600;
+        background-color: $background-button;
+        color: $text-button;
+        text-transform: uppercase;
+        transition: all 400ms ease;
+
+        &:hover {
+            background-color: $text-button;
+            color: $background-button;
+            box-shadow: 0 1px 5px 0 $background-button;
+        }
+    }
+
+
+    .add-post-container {
+        background-color: $background-button;
+        color: $text-button;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+    }
+
+
+}

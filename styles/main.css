@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(59, 48, 48) 15%, rgb(121, 87, 87) 100%);
+  height: 100%;
+  color: white;
+  font-family: Poppins, sans-serif, Roboto;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  margin: 10% 0;
+  height: 100%;
+}
+#container h1 {
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 0.3px 2px 0 white;
+  border-radius: 25px;
+  padding: 0 20px;
+}
+#container h2 {
+  font-family: Raleway, sans-serif, Roboto;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 40px;
+  margin-top: 50px;
+}
+#container .button-get-data {
+  border-radius: 25px;
+  height: 50px;
+  width: 20%;
+  border: none;
+  cursor: pointer;
+  font-family: Raleway, sans-serif, Roboto;
+  font-weight: 600;
+  background-color: #fff9ec;
+  color: #3B3030;
+  text-transform: uppercase;
+  transition: all 400ms ease;
+}
+#container .button-get-data:hover {
+  background-color: #3B3030;
+  color: #fff9ec;
+  box-shadow: 0 1px 5px 0 #fff9ec;
+}
+#container .add-post-container {
+  background-color: #fff9ec;
+  color: #3B3030;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}/*# sourceMappingURL=main.css.map */
