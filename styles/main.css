@@ -66,24 +66,24 @@ body {
   display: grid;
   place-items: center;
   width: 30%;
-  height: 450px;
+  height: auto;
   box-shadow: 0 0.5px 5px 0 white;
 }
 .add-post-container h3 {
   font-family: Raleway, sans-serif, Roboto;
   font-weight: 600;
-  background: linear-gradient(90deg, rgb(59, 48, 48) 15%, rgb(121, 87, 87) 100%);
   color: white;
-  padding: 5px 20px;
-  border-radius: 20px;
   text-transform: uppercase;
+  letter-spacing: 30px;
+  font-size: 14px;
+  padding: 60px 0 80px 0;
 }
 .add-post-container form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30%;
+  gap: 80px;
   width: 100%;
   height: 100%;
 }
@@ -114,19 +114,21 @@ body {
   font-family: Raleway, sans-serif, Roboto;
 }
 .add-post-container form textarea {
-  padding: 0;
   font-size: 1rem;
-  max-width: 80%;
+  max-width: 365px;
   max-height: 200px;
   height: 100%;
   width: 100%;
+  background-color: rgba(213, 213, 213, 0.247);
+  border-radius: 5px;
+  resize: none;
 }
 .add-post-container form textarea:focus {
   font-family: Poppins, sans-serif, Roboto;
 }
 .add-post-container form button {
   border-radius: 25px;
-  height: 50px;
+  padding: 10px 0;
   width: 50%;
   border: none;
   cursor: pointer;
@@ -142,4 +144,8 @@ body {
   background-color: #3B3030;
   color: #fff9ec;
   box-shadow: 0 1px 5px 0 #fff9ec;
+}
+
+.update-post-container {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
