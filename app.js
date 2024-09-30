@@ -16,17 +16,19 @@ async function getData () {
     
 }
 
+const renderData = document.querySelector('.render-data');
 
 function renderPostList (data) {
-    const renderData = document.querySelector('.render-data');
     const listItems = document.createElement('li');
     listItems.classList.add('.list-items');
 
     listItems.innerHTML = `
         <strong>${data.title}</strong>
         <p>${data.body}</p>
-        <button editPost(${data.id})>Edit post</button>
-        <button deletePost(${data.id})>Delete post</button>
+        <div class='container-buttons-updatePost' >
+            <button editPost(${data.id})>Edit post</button>
+            <button deletePost(${data.id})>Delete post</button>     
+        </div>
 
         <section class="add-post-container update-post-container">
             <h3>update post</h3>
@@ -39,6 +41,37 @@ function renderPostList (data) {
     `
 
     renderData.appendChild(listItems);
-
 }
 
+
+function emptyPosts(){
+    return renderData.innerHTML = ''
+};
+
+const form = document.querySelector('form').addEventListener('click', (e) => {
+    e.preventDefault();
+});
+
+function postData(){
+    const title = document.querySelector('#title');
+    const description = document.querySelector('#description');
+
+    if (title.value.trim() === '' || description.value.trim() === '') {
+        alert('enter the fields correctly')
+        return 
+    }
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: title.value,
+          body: description.value,
+          userId: 1,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+
+    
+};

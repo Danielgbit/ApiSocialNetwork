@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Network</title>
     <link rel="stylesheet" href="./styles/main.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div id="container">
-        <h1>Social Network</h1>
-        <h2>See posts</h2>
-        <button class="button-get-data" onclick="getData()">See posts</button>
-        
-        <section class="add-post-container">
-            <h3>Add post</h3>
-            <form>
-                <input type="text" id="title" placeholder="Add title">
-                <textarea type="text" placeholder="Add description" id="description" maxlength="200" minlength="20"></textarea>
-                <button type="submit" onclick="postData()">Send post</button>
-            </form>
-        </section>
-    </div>
-
-    <div id="container-postData">
-        <ul class="render-data"></ul>
-    </div>
+        <div id="container">
+            <h1>Social Network</h1>
+            <h2>See posts</h2>
+            <button class="button-get-data" onclick="getData()">See posts</button>
+            
+            <section class="add-post-container">
+                <h3>Add post</h3>
+                <form>
+                    <input type="text" id="title" placeholder="Add title">
+                    <textarea type="text" placeholder="Add description" id="description" maxlength="200" minlength="20"></textarea>
+                    <button type="submit" onclick="postData()">Send post</button>
+                </form>
+            </section>
+            <button onclick="emptyPosts()" class="button-emptyPosts">
+                <i class='bx bx-trash-alt'></i>
+            </button>
+        </div>
+    
+        <div id="container-postData">
+            <ul class="render-data"></ul>
+        </div>
 
     <script src="/app.js"></script>
 </body>
