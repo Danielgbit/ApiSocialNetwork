@@ -30,10 +30,6 @@ function renderPostList(data) {
     const listItems = document.createElement('li');
     listItems.classList.add('.list-items');
 
-    console.log(data);
-    
-
-
     if (isLoading) {
         listItems.innerHTML = `loading`; //Loading
 
@@ -46,14 +42,14 @@ function renderPostList(data) {
                 <button deletePost(${data.id})>Delete post</button>     
             </div>
     
-            <section class="add-post-container update-post-container">
+            <section id="editForm-${data.id}" class="add-post-container update-post-container">
                 <h3>update post</h3>
                 <form>
-                    <input type="text" id="title-update" placeholder="Add title">
-                    <textarea type="text" placeholder="Add description" id="description-update" maxlength="30" minlength="5"></textarea>
+                    <input type="text" id="title-update-${data.id}" value='${data.title}' placeholder="Add title">
+                    <textarea type="text" placeholder="Add description" id="description-update-${data.id}">${data.body}</textarea>
                     <button onclick="updateData(event, ${data.id})">Send post</button>
                 </form>
-                <button onClick="closeForm()">Close form</button>
+                <button onClick="closeForm(${data.id})">Close form</button>
             </section>
         `
     }
@@ -82,12 +78,12 @@ async function postData() {
         return
     }
 
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    const res = await fetch(`${url}`, {
         method: 'POST',
         body: JSON.stringify({
             title: title.value,
             body: description.value,
-            userId: Date.now(),
+            userId: 1,
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -107,28 +103,58 @@ async function postData() {
 };
 
 
-const editPostToggle = () => { 
-    const seccionUpdateForm = document.querySelector('.update-post-container');
+const editPostToggle = (id) => { 
+    const seccionUpdateForm = document.querySelector(`#editForm-${id}`);
         if (seccionUpdateForm.style.display = 'none') {
             seccionUpdateForm.style.display = 'block'
-        }else {
-            seccionUpdateForm.style.display = 'none'
         };
 } //Visibility
 
+const closeForm = (id) => {
+    const seccionUpdateForm = document.querySelector(`#editForm-${id}`);
+    if (seccionUpdateForm.style.display = 'block') {
+        seccionUpdateForm.style.display = 'none'
+    };
+};
 
-function updateData(e, id){
+
+async function updateData(e, id){
     e.preventDefault();
-
-    const titleUpdate = document.querySelector('#title-update');
-    const descriptionUpdate = document.querySelector('#description-update');
+    
+    const titleUpdate = document.querySelector(`#title-update-${id}`);
+    const descriptionUpdate = document.querySelector(`#description-update-${id}`);
 
 
     if (titleUpdate.value.trim() === '' || descriptionUpdate.value.trim() === '') {
         alert('added the fields');
     };
 
-    console.log(id);
+    const res = await fetch(`${url}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          id: id,
+          title: titleUpdate.value,
+          body: descriptionUpdate.value,
+          userId: 1,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+
+    const data = await res.json();
+
+    const findIndex = posts.findIndex((item) => item.id === id);
+
+    if (findIndex == -1) {
+        alert('error finding the index');
+    };
     
+    posts[findIndex] = data;
+    renderData.innerHTML = '';
+
+    posts.forEach((item) => {
+        renderPostList(item);
+    });
 
 };
