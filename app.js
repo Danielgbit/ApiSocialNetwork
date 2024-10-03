@@ -39,7 +39,7 @@ function renderPostList(data) {
             <p>${data.body}</p>
             <div class='container-buttons-updatePost' >
                 <button onClick="editPostToggle(${data.id})">Edit post</button>
-                <button deletePost(${data.id})>Delete post</button>     
+                <button onClick="deletePost(${data.id})">Delete post</button>     
             </div>
     
             <section id="editForm-${data.id}" class="add-post-container update-post-container">
@@ -157,4 +157,19 @@ async function updateData(e, id){
         renderPostList(item);
     });
 
+};
+
+function deletePost(id){
+    const findIndex = posts.findIndex((item) => item.id === id );
+
+    if (findIndex == -1) {
+        alert('index not found')
+        return;
+    }
+
+    posts.splice(findIndex, 1);
+    renderData.innerHTML = '';
+    posts.forEach((item) => {
+        renderPostList(item);
+    });
 };
