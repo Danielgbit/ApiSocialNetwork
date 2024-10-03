@@ -158,10 +158,6 @@ body {
   box-shadow: 0 1px 5px 0 #fff9ec;
 }
 
-.update-post-container {
-  display: none;
-}
-
 #container-postData {
   width: 40%;
   margin: 3% 0;
@@ -207,4 +203,59 @@ body {
   background-color: #3B3030;
   color: #fff9ec;
   box-shadow: 0 1px 5px 0 #fff9ec;
+}
+
+.update-post-container {
+  display: none;
+  width: 100%;
+  margin: 20px auto;
+}
+.update-post-container .titleAndcloseForm-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
+}
+.update-post-container .titleAndcloseForm-wrapper h3 {
+  padding: 20px 0;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 10px;
+  font-weight: 400;
+}
+.update-post-container .titleAndcloseForm-wrapper button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+}
+.update-post-container .titleAndcloseForm-wrapper button i {
+  background-color: #fff9ec;
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+.update-post-container .titleAndcloseForm-wrapper button i:hover {
+  transform: translateY(3px);
+  background-color: black;
+  color: white;
+}
+.update-post-container form {
+  gap: 30px;
+}
+.update-post-container form input {
+  font-family: Poppins, sans-serif, Roboto;
+  color: white;
+  font-size: 12px;
+}
+.update-post-container form textarea {
+  font-family: Poppins, sans-serif, Roboto;
+  color: white;
+  font-size: 14px;
+  height: 100px;
+  text-align: left;
+}
+.update-post-container form button {
+  margin: 20px 0;
+  font-size: 14px;
+  letter-spacing: 5px;
 }/*# sourceMappingURL=main.css.map */

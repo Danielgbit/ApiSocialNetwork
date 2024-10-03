@@ -43,13 +43,17 @@ function renderPostList(data) {
             </div>
     
             <section id="editForm-${data.id}" class="add-post-container update-post-container">
-                <h3>update post</h3>
+                <div class='titleAndcloseForm-wrapper'>
+                    <h3>update post</h3>
+                    <button onClick="closeForm(${data.id})">
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                </div>            
                 <form>
                     <input type="text" id="title-update-${data.id}" value='${data.title}' placeholder="Add title">
                     <textarea type="text" placeholder="Add description" id="description-update-${data.id}">${data.body}</textarea>
                     <button onclick="updateData(event, ${data.id})">Send post</button>
                 </form>
-                <button onClick="closeForm(${data.id})">Close form</button>
             </section>
         `
     }
